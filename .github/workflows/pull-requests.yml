@@ -9,4 +9,4 @@ permissions:
 
 jobs:
   uneditable:
-    uses: oxygamint/.github/workflows/pull-requests.yml
+    uses: oxygamint/.github/workflows/pull-requests.yml@{SHA/TAG/BRANCH}
