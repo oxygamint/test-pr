@@ -16,16 +16,16 @@ env:
   LARAVEL_BYPASS_ENV_CHECK: 1
 
 jobs:
-  tests:
+  php_test:
     runs-on: ubuntu-latest
 
     strategy:
       fail-fast: true
       matrix:
-        php: [8.2]
-        node-version: [ 20.x, 21.x ]
+        php: [8.2, 8.3]
+        stability: [prefer-lowest, prefer-stable]
 
-    name: PHP ${{ matrix.php }}
+    name: PHP ${{ matrix.php }} - ${{ matrix.stability }}
 
     steps:
       - name: Checkout code
@@ -46,6 +46,20 @@ jobs:
 
       - name: Generate app key
         run: php artisan key:generate
+
+  node_test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: true
+      matrix:
+        node: [ 20.x, 21.x ]
+
+    name: Node ${{ matrix.node }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
