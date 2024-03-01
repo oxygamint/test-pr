@@ -47,6 +47,16 @@ jobs:
       - name: Generate app key
         run: php artisan key:generate
 
+      - name: Run Duster
+        run: ./builds/duster lint --using="tlint,phpcodesniffer,phpcsfixer,pint"
+
+      - name: Run PHPStan
+        run: vendor/bin/phpstan
+        if: matrix.php == '8.2'
+
+      - name: Run Pest
+        run: vendor/bin/pest
+
   node_test:
     runs-on: ubuntu-latest
 
