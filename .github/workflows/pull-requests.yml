@@ -9,4 +9,4 @@ permissions:
 
 jobs:
   uneditable:
-    uses: test-pr/.github/workflows/pull-requests.yml@main
+    uses: oxygamint/.github/.github/workflows/pull-requests.yml@main
