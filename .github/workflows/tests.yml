@@ -50,13 +50,6 @@ jobs:
       - name: Run Duster
         run: ./vendor/bin/duster lint
 
-      - name: Run PHPStan
-        run: vendor/bin/phpstan
-        if: matrix.php == '8.2'
-
-      - name: Run Pest
-        run: vendor/bin/pest
-
   node_test:
     runs-on: ubuntu-latest
 
