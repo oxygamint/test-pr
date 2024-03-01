@@ -48,7 +48,7 @@ jobs:
         run: php artisan key:generate
 
       - name: Run Duster
-        run: ./builds/duster lint --using="tlint,phpcodesniffer,phpcsfixer,pint"
+        run: ./vendor/bin/duster lint
 
       - name: Run PHPStan
         run: vendor/bin/phpstan
