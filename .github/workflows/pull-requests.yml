@@ -9,4 +9,4 @@ permissions:
 
 jobs:
   uneditable:
-    uses: .github/workflows/pull-requests.yml@{SHA/TAG/BRANCH}
+    uses: ./.github/workflows/pull-requests.yml@{SHA/TAG/BRANCH}
